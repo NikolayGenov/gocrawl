@@ -105,17 +105,19 @@ func (w *worker) run() {
 
 // Checks if the given URL can be fetched based on robots.txt policies.
 func (w *worker) isAllowedPerRobotsPolicies(u *url.URL) bool {
-	if w.robotsGroup != nil {
-		// Is this URL allowed per robots.txt policy?
-		ok := w.robotsGroup.Test(u.Path)
-		if !ok {
-			w.logFunc(LogIgnored, "ignored on robots.txt policy: %s", u.String())
-		}
-		return ok
-	}
+	// Being impolite
+	return true
+	//if w.robotsGroup != nil {
+	//	// Is this URL allowed per robots.txt policy?
+	//	ok := w.robotsGroup.Test(u.Path)
+	//	if !ok {
+	//		w.logFunc(LogIgnored, "ignored on robots.txt policy: %s", u.String())
+	//	}
+	//	return ok
+	//}
 
 	// No robots.txt = everything is allowed
-	return true
+	//return true
 }
 
 // Process the specified URL.

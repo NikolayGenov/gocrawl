@@ -131,8 +131,8 @@ var (
 				"http://robota/page1.html",
 			},
 			asserts: a{
-				eMKEnqueued: 2, // page1 and robots.txt (did not visit page1, so page2 never found)
-				eMKVisit:    0, // No visit per robots policy
+				eMKEnqueued: 3, // page1 and robots.txt (did not visit page1, so page2 never found)
+				eMKVisit:    2, // No visit per robots policy
 			},
 		},
 
@@ -576,8 +576,8 @@ var (
 			},
 			seeds: "http://robota/page1.html",
 			asserts: a{
-				eMKVisit:  0,
-				eMKFilter: 1,
+				eMKVisit:  2,
+				eMKFilter: 3,
 			},
 		},
 
@@ -591,8 +591,8 @@ var (
 			},
 			seeds: "http://robotb/page1.html",
 			asserts: a{
-				eMKVisit:  2,
-				eMKFilter: 4,
+				eMKVisit:  4,
+				eMKFilter: 5,
 			},
 		},
 
@@ -659,10 +659,10 @@ var (
 				},
 			},
 			asserts: a{
-				eMKVisit:         1,
+				eMKVisit:         2,
 				eMKEnqueued:      3,
 				eMKRequestRobots: 1,
-				eMKDisallowed:    1,
+				eMKDisallowed:    0,
 			},
 		},
 
